@@ -17,6 +17,19 @@ class ApiFeatures {
       this.query = this.query.find({...keyword});
       return this;
   }
+
+  filter() {
+    const qurreyCopy = {...this.queryStr}; //This line of code creates a shallow copy of the queryStr object using the spread operator.
+    // Any modifications made to queryCopy will not affect the original queryStr object.
+
+    // removing some fields for category
+    const removeFields = ["keyword","page","limit"];
+
+    removeFields.forEach(key=>delete qurreyCopy[key]);
+
+    this.query = this.query.find(qurreyCopy);
+    return this;
+  }
 }
 
 export default ApiFeatures;
