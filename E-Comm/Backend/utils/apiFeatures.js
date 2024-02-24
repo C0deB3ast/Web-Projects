@@ -27,9 +27,16 @@ class ApiFeatures {
 
     removeFields.forEach(key=>delete qurreyCopy[key]);
 
-    this.query = this.query.find(qurreyCopy);
+    //filter for price and rating
+  
+  let queryStr = JSON.stringify(qurreyCopy);
+  queryStr = queryStr.replace(/\b(gt|gte|lt|lte)\b/g,key => `$${key}`);
+
+    this.query = this.query.find(JSON.parse(queryStr));
     return this;
-  }
+
+     
+  } 
 }
 
 export default ApiFeatures;
