@@ -1,5 +1,5 @@
 import User from "../models/usermodel.js";
-import { catchAsyncErrors } from "../middleware/cacthAsyncErrors.js";
+import  catchAsyncErrors  from "../middleware/catchAsyncErrors.js";
 import ErrorHandeler from "../utils/errorHandler.js";
 
 //Register User

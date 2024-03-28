@@ -1,4 +1,4 @@
-import { catchAsyncErrors } from "../middleware/cacthAsyncErrors.js";
+import  {catchAsyncErrors}  from "../middleware/catchAsyncErrors.js";
 import Product from "../models/productmodel.js";
 import ApiFeatures from "../utils/apiFeatures.js";
 import ErrorHandeler from "../utils/errorHandler.js";
